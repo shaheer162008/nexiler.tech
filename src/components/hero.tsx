@@ -57,11 +57,11 @@ export default function Hero() {
   } = heroProps;
 
   return (
-    <div className="relative isolate w-full overflow-hidden font-[family-name:var(--font-geist-sans)] pb-12 sm:pb-16 pt-8">
+    <div className="relative isolate w-full font-[family-name:var(--font-geist-sans)] pb-12 sm:pb-16 pt-8">
       {/* Top gradient background */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu blur-3xl sm:-top-80 pointer-events-none"
       >
         <div
           style={{
@@ -76,7 +76,7 @@ export default function Hero() {
       {/* Bottom gradient background */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu blur-3xl sm:top-[calc(100%-30rem)] pointer-events-none"
       >
         <div
           style={{
