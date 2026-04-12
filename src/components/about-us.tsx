@@ -50,12 +50,24 @@ export default function AboutUs() {
 
         {/* RIGHT: Text Content */}
         <motion.div 
-          className="space-y-6"
+          className="space-y-6 flex flex-col items-start"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 backdrop-blur-md mb-2"
+          >
+            <span className="w-2 h-2 rounded-full bg-sky-400 animate-[pulse_2s_ease-in-out_infinite]" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-white font-[family-name:var(--font-geist-mono)]">
+              Who We Are
+            </span>
+          </motion.div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-[family-name:var(--font-geist-sans)]">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Nexiler</span>
           </h2>

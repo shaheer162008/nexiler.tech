@@ -3,6 +3,8 @@ import Services from "@/components/services";
 import Features from "@/components/features";
 import AboutUs from "@/components/about-us";
 import OurWork from "@/components/our-work";
+import Testimonials from "@/components/testimonials";
+import Pricing from "@/components/pricing";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Features />
       <AboutUs />
       <OurWork />
+      <Testimonials />
+      <Pricing />
     </main>
   );
 }

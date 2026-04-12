@@ -240,7 +240,19 @@ export default function Features() {
   return (
     <div className="w-full bg-background relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-10 md:mb-14 font-[family-name:var(--font-geist-sans)] max-w-2xl mx-auto text-center">
+        <div className="mb-10 md:mb-14 font-[family-name:var(--font-geist-sans)] max-w-2xl mx-auto text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
+          >
+            <Command className="w-4 h-4 text-primary" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              Core Capabilities
+            </span>
+          </motion.div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
             Product Features
           </h2>

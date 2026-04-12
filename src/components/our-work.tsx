@@ -65,7 +65,7 @@ const projects = [
 
 export default function OurWork() {
   return (
-    <section id="work" className="relative isolate w-full bg-background py-20 sm:py-32 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
+    <section id="work" className="relative isolate w-full bg-background pt-20 sm:pt-32 pb-10 sm:pb-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
       
       {/* Background Atmospheric Glow */}
       <div

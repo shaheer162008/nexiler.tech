@@ -148,7 +148,19 @@ export default function Services() {
     <div className="w-full bg-background relative z-10 py-16 sm:py-24 border-b border-border/5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 font-[family-name:var(--font-geist-sans)]">
-          <div className="max-w-2xl text-left">
+          <div className="max-w-2xl text-left flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
+            >
+              <Cpu className="w-4 h-4 text-emerald-400" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                Expertise
+              </span>
+            </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
               Our Services
             </h2>
