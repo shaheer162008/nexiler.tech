@@ -54,15 +54,15 @@ const IntegrationCard = () => (
           ✳️
         </span>
       </div>
-      <CardTitle>Zapier Integration</CardTitle>
-      <CardDescription>
+      <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Zapier Integration</CardTitle>
+      <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed mt-2">
         Unlock effortless automation. Your gateway to effortless automation
         connect your favourite apps, streamline workflows, and supercharge
         productivity with ease.
       </CardDescription>
     </CardHeader>
     <CardFooter className="mt-auto flex items-center justify-between">
-      <Button variant="outline" size="sm">
+      <Button variant="outline" size="sm" className="font-[family-name:var(--font-geist-sans)] font-bold tracking-tight text-xs sm:text-sm">
         <Settings2 className="mr-2 h-4 w-4" />
         Configure
       </Button>
@@ -78,10 +78,10 @@ const TrackersCard = () => (
   <Card className="h-full font-[family-name:var(--font-geist-sans)]">
     <CardContent className="flex h-full flex-col justify-between p-6">
       <div>
-        <CardTitle className="text-base font-medium">
+        <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">
           Trackers Connected
         </CardTitle>
-        <CardDescription>03 Active Integrations</CardDescription>
+        <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed mt-2">03 Active Integrations</CardDescription>
       </div>
       <div className="flex -space-x-2 overflow-hidden mt-4">
         <img
@@ -109,17 +109,17 @@ const FocusCard = () => (
     <CardContent className="flex h-full flex-col justify-between p-6">
       <div className="flex items-start justify-between mb-4">
         <div>
-          <CardTitle className="text-base font-medium">Focusing</CardTitle>
-          <CardDescription>Productivity Analytics</CardDescription>
+          <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Focusing</CardTitle>
+          <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium mt-2">Productivity Analytics</CardDescription>
         </div>
-        <Badge variant="outline" className="border-orange-300 text-orange-600">
+        <Badge variant="outline" className="border-orange-300 text-orange-600 font-[family-name:var(--font-geist-mono)]">
           Range Ratio
         </Badge>
       </div>
       <div>
-        <span className="text-5xl font-bold tracking-tighter">42%</span>
+        <span className="text-5xl sm:text-6xl font-extrabold tracking-tighter">42%</span>
       </div>
-      <div className="flex justify-between text-xs text-muted-foreground mt-4">
+      <div className="flex justify-between text-xs sm:text-sm font-[family-name:var(--font-geist-mono)] font-medium text-muted-foreground/90 mt-4">
         <span>Maximum of focus</span>
         <span>Monthly Focus</span>
       </div>
@@ -146,10 +146,10 @@ const StatisticCard = () => (
 const ProductivityCard = () => (
   <Card className="h-full font-[family-name:var(--font-geist-sans)]">
     <CardContent className="flex h-full flex-col justify-end p-6">
-      <CardTitle className="text-base font-medium">
+      <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter mb-2">
         Team's Productivity
       </CardTitle>
-      <CardDescription>
+      <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed">
         Boost your team's efficiency with our next-gen productivity solutions.
       </CardDescription>
     </CardContent>
@@ -159,9 +159,9 @@ const ProductivityCard = () => (
 const ShortcutsCard = () => (
   <Card className="h-full font-[family-name:var(--font-geist-sans)]">
     <CardContent className="flex h-full flex-wrap items-center justify-between gap-4 p-6">
-      <div>
-        <CardTitle className="text-base font-medium">Shortcut Keys</CardTitle>
-        <CardDescription>
+      <div className="space-y-2">
+        <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Shortcut Keys</CardTitle>
+        <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium">
           Faster easier way to access the features.
         </CardDescription>
       </div>
