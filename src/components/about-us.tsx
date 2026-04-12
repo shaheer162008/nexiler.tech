@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AboutUs() {
   return (
@@ -17,13 +18,7 @@ export default function AboutUs() {
           
           {/* Rotating conic gradient glow - Extra Smooth & Contained */}
           <div className="absolute inset-[-50%] flex items-center justify-center pointer-events-none">
-            <div
-              className="
-                h-[200%] w-[200%] blur-[120px] opacity-70 mix-blend-screen
-                bg-[conic-gradient(from_0deg,oklch(0.646_0.222_41.116),theme(colors.purple.500),oklch(0.488_0.243_264.376),theme(colors.fuchsia.600),oklch(0.646_0.222_41.116))]
-                animate-[spin_10s_linear_infinite]
-              "
-            />
+            <div className="h-[200%] w-[200%] blur-[120px] opacity-70 mix-blend-screen bg-[conic-gradient(from_0deg,oklch(0.646_0.222_41.116),theme(colors.purple.500),oklch(0.488_0.243_264.376),theme(colors.fuchsia.600),oklch(0.646_0.222_41.116))] animate-[spin_10s_linear_infinite]" />
           </div>
 
           {/* Inner card hovering above the gradient */}
@@ -36,8 +31,7 @@ export default function AboutUs() {
 
               {/* Progress bar */}
               <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[92%] rounded-full
-                                bg-[linear-gradient(90deg,theme(colors.cyan.400),theme(colors.sky.400),theme(colors.emerald.400))]" />
+                <div className="h-full w-[92%] rounded-full bg-[linear-gradient(90deg,theme(colors.cyan.400),theme(colors.sky.400),theme(colors.emerald.400))]" />
               </div>
 
               <p className="text-xs text-zinc-400">
@@ -55,7 +49,13 @@ export default function AboutUs() {
         </div>
 
         {/* RIGHT: Text Content */}
-        <div className="space-y-6">
+        <motion.div 
+          className="space-y-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-[family-name:var(--font-geist-sans)]">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Nexiler</span>
           </h2>
@@ -65,7 +65,7 @@ export default function AboutUs() {
           <Button variant="link" className="px-0 pt-4 text-white text-base sm:text-lg tracking-tight font-semibold hover:text-white/80 transition-colors group">
             Meet the team <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

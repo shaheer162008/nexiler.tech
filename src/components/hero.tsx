@@ -115,16 +115,11 @@ export default function Hero() {
               ))}
             </div>
           )}
-          {loginText && loginHref && (
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
-              <a href={loginHref} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
-                {loginText}
-              </a>
-              <a href="/signup" className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
-                Get Started
-              </a>
-            </div>
-          )}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+            <a href="/signup" className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
+              Get Started
+            </a>
+          </div>
         </nav>
         
         {/* Mobile menu */}
@@ -158,22 +153,14 @@ export default function Hero() {
                     ))}
                   </div>
                 )}
-                {loginText && loginHref && (
-                  <div className="py-6 space-y-3">
-                    <a
-                      href={loginHref}
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-foreground hover:bg-accent transition-colors"
-                    >
-                      {loginText}
-                    </a>
-                    <a
-                      href="/signup"
-                      className="-mx-3 flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-                    >
-                      Get Started Free
-                    </a>
-                  </div>
-                )}
+                <div className="py-6">
+                  <a
+                    href="/signup"
+                    className="-mx-3 flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    Get Started Free
+                  </a>
+                </div>
               </div>
             </div>
           </DialogContent>
