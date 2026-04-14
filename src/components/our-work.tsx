@@ -97,7 +97,7 @@ export default function OurWork() {
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-foreground mb-6 leading-[1.1]">
               Crafting Digital <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#8A2BE2]">Masterpieces</span>
+              <span className="text-foreground">Masterpieces</span>
             </h2>
           </motion.div>
           
@@ -164,7 +164,7 @@ export default function OurWork() {
                   <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-2 shadow-black drop-shadow-xl">
                     {project.title}
                   </h3>
-                  <p className="text-zinc-300 font-medium font-[family-name:var(--font-geist-mono)] text-sm sm:text-base max-w-sm leading-relaxed opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <p className="text-foreground font-medium font-[family-name:var(--font-geist-mono)] text-sm sm:text-base max-w-sm leading-relaxed opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     {project.description}
                   </p>
                 </div>

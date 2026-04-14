@@ -112,7 +112,7 @@ const FocusCard = () => (
           <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Focusing</CardTitle>
           <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium mt-2">Productivity Analytics</CardDescription>
         </div>
-        <Badge variant="outline" className="border-orange-300 text-orange-600 font-[family-name:var(--font-geist-mono)]">
+        <Badge variant="outline" className="border-orange-300 text-foreground font-[family-name:var(--font-geist-mono)]">
           Range Ratio
         </Badge>
       </div>

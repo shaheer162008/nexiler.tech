@@ -99,7 +99,7 @@ export default function Testimonials() {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-4 leading-tight"
           >
             Trusted by the <br className="hidden sm:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#8A2BE2]">Best in the Business</span>
+            <span className="text-foreground">Best in the Business</span>
           </motion.h2>
           
           <motion.p 

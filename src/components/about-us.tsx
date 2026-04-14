@@ -26,7 +26,7 @@ export default function AboutUs() {
             <CardContent className="p-5">
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-sm font-medium text-white">Nexiler</span>
-                <span className="text-xs text-zinc-400">99 / 99</span>
+                <span className="text-xs text-foreground">99 / 99</span>
               </div>
 
               {/* Progress bar */}
@@ -34,13 +34,13 @@ export default function AboutUs() {
                 <div className="h-full w-[92%] rounded-full bg-[linear-gradient(90deg,theme(colors.cyan.400),theme(colors.sky.400),theme(colors.emerald.400))]" />
               </div>
 
-              <p className="text-xs text-zinc-400">
+              <p className="text-xs text-foreground">
                 Building solutions… please keep the workspace open until the process is complete.
               </p>
 
               <Button
                 variant="secondary"
-                className="mt-4 w-full rounded-full bg-zinc-800 text-zinc-100 hover:bg-zinc-700 font-semibold"
+                className="mt-4 w-full rounded-full bg-zinc-800 text-foreground hover:bg-zinc-700 font-semibold"
               >
                 Cancel
               </Button>
@@ -71,7 +71,7 @@ export default function AboutUs() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-[family-name:var(--font-geist-sans)]">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Nexiler</span>
           </h2>
-          <p className="text-lg sm:text-xl font-medium text-pretty text-zinc-400 max-w-2xl leading-relaxed font-[family-name:var(--font-geist-mono)]">
+          <p className="text-lg sm:text-xl font-medium text-pretty text-foreground max-w-2xl leading-relaxed font-[family-name:var(--font-geist-mono)]">
             We build beautiful, modern interfaces with our comprehensive toolset. No setup, no configuration needed. Focus on your business while we handle the rest.
           </p>
           <Button variant="link" className="px-0 pt-4 text-white text-base sm:text-lg tracking-tight font-semibold hover:text-white/80 transition-colors group">

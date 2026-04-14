@@ -30,7 +30,7 @@ export default function Footer() {
                   Nexiler
                 </span>
               </Link>
-              <p className="mt-6 text-sm text-zinc-400 font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed max-w-xs">
+              <p className="mt-6 text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed max-w-xs">
                 Empowering businesses with intelligent automation, stunning websites, and relentless performance.
               </p>
             </motion.div>
@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {['About Us', 'Careers', 'Our Work', 'Contact', 'Blog'].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm font-medium text-foreground hover:text-white transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Web Development', 'AI Automation', 'Mobile Apps', 'Branding', 'SEO & Marketing'].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm font-medium text-foreground hover:text-white transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm font-medium text-foreground hover:text-white transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -79,7 +79,7 @@ export default function Footer() {
 
             <div className="flex gap-4 pt-4">
               {[1, 2, 3, 4].map((i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:bg-white/10 hover:text-white transition-all hover:-translate-y-1">
+                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 hover:text-white transition-all hover:-translate-y-1">
                   <Link2 className="w-4 h-4" />
                 </a>
               ))}
@@ -89,10 +89,10 @@ export default function Footer() {
 
         {/* Bottom Banner */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-zinc-500 font-medium font-[family-name:var(--font-geist-mono)]">
+          <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)]">
             &copy; {new Date().getFullYear()} Nexiler. All rights reserved.
           </p>
-          <p className="text-sm text-zinc-500 font-medium font-[family-name:var(--font-geist-mono)] flex items-center gap-1">
+          <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] flex items-center gap-1">
             Developed By Team Nexiler
           </p>
         </div>

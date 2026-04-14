@@ -9,7 +9,7 @@ export default function CTA() {
     <section className="relative w-full py-24 sm:py-32 overflow-hidden bg-background font-[family-name:var(--font-geist-sans)] border-t border-border/5">
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-20 blur-[120px] bg-[conic-gradient(from_180deg,theme(colors.blue.600),theme(colors.purple.600),theme(colors.cyan.600),theme(colors.blue.600))]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-20 blur-[120px] bg-[conic-gradient(from_180deg,theme(colors.zinc.700),theme(colors.zinc.900),theme(colors.zinc.600),theme(colors.zinc.700))]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8">
@@ -24,7 +24,7 @@ export default function CTA() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md mb-8"
           >
-            <Rocket className="w-4 h-4 text-sky-400" />
+            <Rocket className="w-4 h-4 text-foreground" />
             <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
               Start Your Journey
             </span>
@@ -37,7 +37,7 @@ export default function CTA() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-foreground mb-6"
           >
-            Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-500">Digital Presence?</span>
+            Ready to Transform Your <span className="text-foreground">Digital Presence?</span>
           </motion.h2>
 
           <motion.p 

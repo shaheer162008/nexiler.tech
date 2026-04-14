@@ -17,7 +17,7 @@ const pricingPlans = [
       "Contact Form Integration",
     ],
     popular: false,
-    icon: <Zap className="w-5 h-5 text-zinc-400" />,
+    icon: <Zap className="w-5 h-5 text-foreground" />,
     buttonVariant: "secondary" as const,
   },
   {
@@ -33,7 +33,7 @@ const pricingPlans = [
       "Analytics Dashboard",
     ],
     popular: true,
-    icon: <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />,
+    icon: <Star className="w-5 h-5 text-foreground fill-foreground" />,
     buttonVariant: "default" as const,
   },
   {
@@ -49,7 +49,7 @@ const pricingPlans = [
       "Custom CRM Development",
     ],
     popular: false,
-    icon: <Gem className="w-5 h-5 text-violet-400" />,
+    icon: <Gem className="w-5 h-5 text-foreground" />,
     buttonVariant: "secondary" as const,
   }
 ];
@@ -59,7 +59,7 @@ export default function Pricing() {
     <section className="relative w-full bg-background py-20 sm:py-32 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
       {/* Background gradients for premium feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 blur-[100px] bg-[conic-gradient(from_90deg,theme(colors.purple.600),theme(colors.blue.600),theme(colors.pink.600),theme(colors.purple.600))]" />
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 blur-[100px] bg-[conic-gradient(from_90deg,theme(colors.zinc.800),theme(colors.zinc.900),theme(colors.zinc.700),theme(colors.zinc.800))]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
@@ -71,7 +71,7 @@ export default function Pricing() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
           >
-            <Gem className="w-4 h-4 text-primary" />
+            <Gem className="w-4 h-4 text-foreground" />
             <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
               Pricing Plans
             </span>
@@ -83,7 +83,7 @@ export default function Pricing() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6"
           >
-            Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Pricing</span>
+            Transparent <span className="text-foreground">Pricing</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -106,13 +106,13 @@ export default function Pricing() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className={`relative flex flex-col h-full rounded-[2.5rem] p-8 sm:p-10 transition-all duration-300 ${
                 plan.popular 
-                ? "bg-secondary/40 border border-primary/30 shadow-[0_0_50px_-12px_rgba(255,0,0,0.2)] transform md:-translate-y-4" 
+                ? "bg-secondary/40 border border-white/20 shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)] transform md:-translate-y-4" 
                 : "bg-card/40 border border-white/5 hover:border-white/10 hover:bg-card/60"
               } backdrop-blur-xl`}
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest shadow-lg">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-foreground text-background text-xs font-bold uppercase tracking-widest shadow-lg">
                     <Star className="w-3 h-3 fill-current" /> Most Popular
                   </div>
                 </div>
@@ -138,8 +138,8 @@ export default function Pricing() {
               <ul className="space-y-4 mb-10 flex-1">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" />
                     </div>
                     <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                       {feature}

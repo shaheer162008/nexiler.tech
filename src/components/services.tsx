@@ -52,49 +52,49 @@ const servicesList = [
   {
     title: "Website Development",
     description: "High-performance, responsive websites built to convert and scale your digital presence.",
-    icon: <Laptop className="h-6 w-6 text-blue-400" />,
+    icon: <Laptop className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-2 md:row-span-1",
   },
   {
     title: "AI Automation Setup",
     description: "Automate repetitive tasks and streamline your operations with custom workflows.",
-    icon: <Cpu className="h-6 w-6 text-emerald-400" />,
+    icon: <Cpu className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
     title: "AI Chatbots",
     description: "Integrate intelligent bots for 24/7 customer support and lead generation.",
-    icon: <MessageSquareText className="h-6 w-6 text-violet-400" />,
+    icon: <MessageSquareText className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Full Brand Creation",
     description: "Stand out with a modern, cohesive brand identity and logo design.",
-    icon: <Palette className="h-6 w-6 text-pink-400" />,
+    icon: <Palette className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Social Media Ads",
     description: "Targeted, high-ROI ad campaigns to drive immediate traffic and consistent leads.",
-    icon: <Megaphone className="h-6 w-6 text-orange-400" />,
+    icon: <Megaphone className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-2 md:row-span-1",
   },
   {
     title: "SEO Optimization",
     description: "Dominate search rankings and earn valuable long-term organic traffic.",
-    icon: <TrendingUp className="h-6 w-6 text-green-400" />,
+    icon: <TrendingUp className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Mobile App Dev",
     description: "Native and cross-platform mobile apps for seamless iOS and Android experiences.",
-    icon: <Smartphone className="h-6 w-6 text-cyan-400" />,
+    icon: <Smartphone className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-2 md:row-span-1",
   },
   {
     title: "Motion Graphics",
     description: "Engaging video editing and dynamic animations to tell your brand story.",
-    icon: <Film className="h-6 w-6 text-red-400" />,
+    icon: <Film className="h-6 w-6 text-foreground" />,
     colSpan: "md:col-span-2 md:row-span-1",
   },
 ];
@@ -156,7 +156,7 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
-              <Cpu className="w-4 h-4 text-emerald-400" />
+              <Cpu className="w-4 h-4 text-foreground" />
               <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
                 Expertise
               </span>
