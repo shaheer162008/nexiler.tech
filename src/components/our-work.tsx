@@ -33,7 +33,7 @@ const projects = [
     title: "AI Automation Hub",
     category: "Enterprise Software",
     description: "An intelligent operating system that automates complex business workflows using local LLMs.",
-    image: "https://images.unsplash.com/photo-1620712948343-0088b3f50348?q=80&w=2400&auto=format&fit=crop",
+    image: "https://cdn.prod.website-files.com/64e0e8864ada8a57fabcf99a/6841529bbcd26e768c96419f_ai4-p-1080.png",
     colSpan: "md:col-span-2 md:row-span-2",
     tags: ["React", "Python", "OpenAI"],
   },
@@ -60,6 +60,16 @@ const projects = [
     image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=2340&auto=format&fit=crop",
     colSpan: "md:col-span-2 md:row-span-1",
     tags: ["Vue", "Node.js", "PostgreSQL"],
+    isViewMore: false
+  },
+  {
+    title: "View More",
+    category: "",
+    description: "",
+    image: "",
+    colSpan: "md:col-span-1 md:row-span-1",
+    tags: [],
+    isViewMore: true
   }
 ];
 
@@ -128,47 +138,59 @@ export default function OurWork() {
               whileHover={{ y: -8 }}
               className={`group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-card isolate ${project.colSpan}`}
             >
-              {/* Cinematic Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-500 group-hover:via-black/50" />
-              
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 z-0"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-              
-              <div className="absolute inset-0 z-20 flex flex-col justify-between p-8 sm:p-10 pointer-events-none">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-xs font-semibold text-white tracking-wide font-[family-name:var(--font-geist-mono)] shadow-lg"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+              {project.isViewMore ? (
+                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-8 text-center cursor-pointer transition-colors duration-300 hover:bg-white/5">
+                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 bg-white/5">
+                    <ArrowUpRight className="w-8 h-8 text-white" />
                   </div>
+                  <h3 className="text-2xl font-bold tracking-tighter text-white">View More</h3>
+                  <p className="text-muted-foreground mt-2 text-sm font-[family-name:var(--font-geist-mono)]">See all our projects</p>
+                </div>
+              ) : (
+                <>
+                  {/* Cinematic Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-500 group-hover:via-black/50" />
                   
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center text-white opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-auto cursor-pointer shadow-2xl hover:bg-white/30 hover:scale-110 active:scale-95">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
-                </div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 z-0"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  
+                  <div className="absolute inset-0 z-20 flex flex-col justify-between p-8 sm:p-10 pointer-events-none">
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span 
+                            key={tagIndex} 
+                            className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-xs font-semibold text-white tracking-wide font-[family-name:var(--font-geist-mono)] shadow-lg"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="w-12 h-12 bg-white/10 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center text-white opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-auto cursor-pointer shadow-2xl hover:bg-white/30 hover:scale-110 active:scale-95">
+                        <ArrowUpRight className="w-5 h-5" />
+                      </div>
+                    </div>
 
-                <div className="transform translate-y-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
-                  <span className="text-primary font-bold tracking-widest uppercase text-xs font-[family-name:var(--font-geist-mono)] block mb-2 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
-                    {project.category}
-                  </span>
-                  <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-2 shadow-black drop-shadow-xl">
-                    {project.title}
-                  </h3>
-                  <p className="text-foreground font-medium font-[family-name:var(--font-geist-mono)] text-sm sm:text-base max-w-sm leading-relaxed opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
+                    <div className="transform translate-y-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                      <span className="text-primary font-bold tracking-widest uppercase text-xs font-[family-name:var(--font-geist-mono)] block mb-2 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+                        {project.category}
+                      </span>
+                      <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-2 shadow-black drop-shadow-xl">
+                        {project.title}
+                      </h3>
+                      <p className="text-foreground font-medium font-[family-name:var(--font-geist-mono)] text-sm sm:text-base max-w-sm leading-relaxed opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>
