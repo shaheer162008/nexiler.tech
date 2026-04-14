@@ -145,7 +145,7 @@ export function ServicesBentoGrid() {
 
 export default function Services() {
   return (
-    <div className="w-full bg-background relative z-10 py-16 sm:py-24 border-b border-border/5">
+    <div className="relative z-10 py-10 sm:py-16 border-b border-border/5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 font-[family-name:var(--font-geist-sans)]">
           <div className="max-w-2xl text-left flex flex-col items-start">

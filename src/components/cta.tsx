@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function CTA() {
   return (
-    <section className="relative w-full py-12 sm:py-16 overflow-hidden bg-background font-[family-name:var(--font-geist-sans)] border-t border-border/5">
+    <section className="relative w-full py-6 sm:py-10 overflow-hidden bg-transparent font-[family-name:var(--font-geist-sans)] border-t border-border/5">
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-20 blur-[120px] bg-[conic-gradient(from_180deg,theme(colors.zinc.700),theme(colors.zinc.900),theme(colors.zinc.600),theme(colors.zinc.700))]" />

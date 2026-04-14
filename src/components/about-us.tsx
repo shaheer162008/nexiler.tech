@@ -8,8 +8,8 @@ import { BackgroundGradientAnimation } from "@/components/ui/background-gradient
 
 export default function AboutUs() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-black text-white px-8 py-16 md:px-16 font-[family-name:var(--font-geist-sans)] z-0">
-      
+    <section className="relative isolate w-full overflow-hidden bg-transparent text-white px-8 pb-0 pt-8 md:pt-10 md:pb-0 md:px-16 font-[family-name:var(--font-geist-sans)] z-0">
+
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 relative z-10">
         {/* LEFT: Text */}
         <div 

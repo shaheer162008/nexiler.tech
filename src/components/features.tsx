@@ -248,7 +248,7 @@ export const BentoGridShowcase = ({
 // --- The Default Exported Section Wrapper ---
 export default function Features() {
   return (
-    <div className="w-full bg-background relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8">
+    <div className="relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8 w-full">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-10 md:mb-14 font-[family-name:var(--font-geist-sans)] max-w-2xl mx-auto text-center flex flex-col items-center">
           <motion.div

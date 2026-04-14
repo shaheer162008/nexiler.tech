@@ -56,7 +56,7 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section className="relative w-full bg-background py-12 sm:py-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
+    <section className="relative w-full bg-transparent py-4 sm:py-6 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
       {/* Background gradients for premium feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 blur-[100px] bg-[conic-gradient(from_90deg,theme(colors.zinc.800),theme(colors.zinc.900),theme(colors.zinc.700),theme(colors.zinc.800))]" />
