@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 export default function AboutUs() {
   return (
@@ -15,37 +16,34 @@ export default function AboutUs() {
           className="relative mx-auto flex h-[40rem] w-full max-w-[60rem] items-center justify-center overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border border-white/5 isolate bg-black"
           style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
         >
-          
-          {/* Rotating conic gradient glow - Extra Smooth & Contained */}
-          <div className="absolute inset-[-50%] flex items-center justify-center pointer-events-none">
-            <div className="h-[200%] w-[200%] blur-[120px] opacity-70 mix-blend-screen bg-[conic-gradient(from_0deg,oklch(0.646_0.222_41.116),theme(colors.purple.500),oklch(0.488_0.243_264.376),theme(colors.fuchsia.600),oklch(0.646_0.222_41.116))] animate-[spin_10s_linear_infinite]" />
-          </div>
-
-          {/* Inner card hovering above the gradient */}
-          <Card className="w-[340px] z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl">
-            <CardContent className="p-5">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="text-sm font-medium text-white">Nexiler</span>
-                <span className="text-xs text-foreground">99 / 99</span>
+          <BackgroundGradientAnimation>
+            <div className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none">
+              {/* Inner card hovering above the gradient */}
+              <Card className="w-[340px] z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl pointer-events-auto">
+            <CardContent className="p-6 font-[family-name:var(--font-geist-mono)]">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-white">System Boot</span>
+                </div>
+                <span className="text-xs font-extrabold text-sky-400">92%</span>        
               </div>
 
               {/* Progress bar */}
-              <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[92%] rounded-full bg-[linear-gradient(90deg,theme(colors.cyan.400),theme(colors.sky.400),theme(colors.emerald.400))]" />
+              <div className="mb-5 h-1.5 w-full overflow-hidden rounded-full bg-white/10 relative">
+                <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.6)] animate-[pulse_2s_ease-in-out_infinite]" />
               </div>
 
-              <p className="text-xs text-foreground">
-                Building solutions… please keep the workspace open until the process is complete.
+              <p className="text-xs text-muted-foreground font-medium leading-relaxed">
+                Loading intelligent workflows & compiling next-generation components...
               </p>
-
-              <Button
-                variant="secondary"
-                className="mt-4 w-full rounded-full bg-zinc-800 text-foreground hover:bg-zinc-700 font-semibold"
-              >
-                Cancel
-              </Button>
+              <p className="text-xs text-white/80 font-semibold mt-3 animate-pulse">
+                Your digital ecosystem is almost ready.
+              </p>
             </CardContent>
           </Card>
+             </div>
+          </BackgroundGradientAnimation>
         </div>
 
         {/* RIGHT: Text Content */}

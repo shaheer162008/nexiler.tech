@@ -57,7 +57,7 @@ const itemVariants: Variants = {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative isolate w-full bg-background pt-10 sm:pt-16 pb-20 sm:pb-32 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
+    <section id="testimonials" className="relative isolate w-full bg-background pt-10 sm:pt-16 pb-12 sm:pb-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
       
       {/* Background Atmospheric Glow */}
       <div

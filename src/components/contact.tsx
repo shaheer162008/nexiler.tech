@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   return (
-    <section className="relative w-full py-20 sm:py-32 bg-background font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
+    <section className="relative w-full py-12 sm:py-16 bg-background font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
