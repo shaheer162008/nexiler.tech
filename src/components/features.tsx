@@ -47,8 +47,9 @@ const itemVariants: any = {
 
 // --- Helper Components for the Demo ---
 const IntegrationCard = () => (
-  <Card className="flex h-full flex-col font-[family-name:var(--font-geist-sans)]">
-    <CardHeader>
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer flex h-full flex-col font-[family-name:var(--font-geist-sans)]">
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <CardHeader className="relative z-10">
       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/50">
         <span className="text-3xl" role="img" aria-label="sparkles">
           ✳️
@@ -75,8 +76,10 @@ const IntegrationCard = () => (
 );
 
 const TrackersCard = () => (
-  <Card className="h-full font-[family-name:var(--font-geist-sans)]">
-    <CardContent className="flex h-full flex-col justify-between p-6">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <CardContent className="relative z-10 flex h-full flex-col justify-between p-6">
       <div>
         <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">
           Trackers Connected
@@ -105,8 +108,10 @@ const TrackersCard = () => (
 );
 
 const FocusCard = () => (
-  <Card className="h-full font-[family-name:var(--font-geist-sans)]">
-    <CardContent className="flex h-full flex-col justify-between p-6">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <CardContent className="relative z-10 flex h-full flex-col justify-between p-6">
       <div className="flex items-start justify-between mb-4">
         <div>
           <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Focusing</CardTitle>
@@ -128,7 +133,7 @@ const FocusCard = () => (
 );
 
 const StatisticCard = () => (
-  <Card className="relative h-full w-full overflow-hidden font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer relative h-full w-full overflow-hidden font-[family-name:var(--font-geist-sans)]">
     {/* Dotted background */}
     <div
       className="absolute inset-0 opacity-20"
@@ -137,6 +142,7 @@ const StatisticCard = () => (
         backgroundSize: "16px 16px",
       }}
     />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardContent className="relative z-10 flex h-full items-center justify-center p-6">
       <span className="text-7xl font-extrabold text-foreground/90 tracking-tighter">10X</span>
     </CardContent>
@@ -144,8 +150,10 @@ const StatisticCard = () => (
 );
 
 const ProductivityCard = () => (
-  <Card className="h-full font-[family-name:var(--font-geist-sans)]">
-    <CardContent className="flex h-full flex-col justify-end p-6">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <CardContent className="relative z-10 flex h-full flex-col justify-end p-6">
       <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter mb-2">
         Team's Productivity
       </CardTitle>
@@ -157,8 +165,10 @@ const ProductivityCard = () => (
 );
 
 const ShortcutsCard = () => (
-  <Card className="h-full font-[family-name:var(--font-geist-sans)]">
-    <CardContent className="flex h-full flex-wrap items-center justify-between gap-4 p-6">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
+    <CardContent className="relative z-10 flex h-full flex-wrap items-center justify-between gap-4 p-6">
       <div className="space-y-2">
         <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Shortcut Keys</CardTitle>
         <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium">
@@ -203,32 +213,32 @@ export const BentoGridShowcase = ({
       )}
     >
       {/* Slot 1: Integration (Spans 2 rows) */}
-      <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-3">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-1 md:row-span-3">
         <IntegrationCard />
       </motion.div>
 
       {/* Slot 2: Trackers */}
-      <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-1 md:row-span-1">
         <TrackersCard />
       </motion.div>
 
       {/* Slot 3: Statistic */}
-      <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-1 md:row-span-1">
         <StatisticCard />
       </motion.div>
 
       {/* Slot 4: Focus */}
-      <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-1 md:row-span-1">
         <FocusCard />
       </motion.div>
 
       {/* Slot 5: Productivity */}
-      <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-1 md:row-span-1">
         <ProductivityCard />
       </motion.div>
 
       {/* Slot 6: Shortcuts (Spans 2 cols) */}
-      <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-1">
+      <motion.div variants={itemVariants} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="md:col-span-2 md:row-span-1">
         <ShortcutsCard />
       </motion.div>
     </motion.section>

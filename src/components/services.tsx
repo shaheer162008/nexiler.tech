@@ -116,7 +116,7 @@ export function ServicesBentoGrid() {
           whileHover={{ y: -8, scale: 1.01 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <Card className="relative h-full flex flex-col font-[family-name:var(--font-geist-sans)] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer">
+          <Card className="relative rounded-[2rem] h-full flex flex-col font-[family-name:var(--font-geist-sans)] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer">
             {/* Subtle Gradient Glow effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
             
