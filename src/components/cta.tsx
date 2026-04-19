@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Rocket, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { companyConfig } from "../../company.config";
 
 export default function CTA() {
   return (
@@ -45,18 +46,18 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl font-medium text-muted-foreground/90 max-w-2xl mb-10 font-[family-name:var(--font-geist-mono)] leading-relaxed"
-          >
-            Join visionary brands growing with Nexiler. Let's build something extraordinary together. No commitments, just pure value.
-          </motion.p>
+              className="text-lg sm:text-xl font-medium text-muted-foreground/90 max-w-2xl mb-10 font-[family-name:var(--font-geist-mono)] leading-relaxed"
+            >
+              Join visionary brands growing with {companyConfig.name}. Let's build something extraordinary together. No commitments, just pure value.
+            </motion.p>
 
-          <motion.div 
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-          >
+            <motion.div
+              initial={{ opacity: 1, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+            >
             <Button size="lg" className="rounded-full h-14 px-8 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 group shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:scale-105 transition-all">
               Book a Free Call
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

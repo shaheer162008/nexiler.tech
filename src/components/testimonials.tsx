@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Star, Quote } from "lucide-react";
+import { companyConfig } from "../../company.config";
 
 const testimonials = [
   {
@@ -10,7 +11,7 @@ const testimonials = [
     role: "Chief Marketing Officer",
     company: "Lumina Tech",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop",
-    quote: "Nexiler didn't just build us a website; they transformed our entire digital ecosystem. The workflow automations have saved our team hundreds of hours a month.",
+    quote: `${companyConfig.name} didn't just build us a website; they transformed our entire digital ecosystem. The workflow automations have saved our team hundreds of hours a month.`,
     rating: 5,
   },
   {
@@ -26,7 +27,7 @@ const testimonials = [
     role: "Director of Operations",
     company: "Nexus Global",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
-    quote: "Integrating Nexiler's AI automation tools was the best decision we made this year. It's seamless, flawlessly designed, and incredibly intuitive.",
+    quote: `Integrating ${companyConfig.name}'s AI automation tools was the best decision we made this year. It's seamless, flawlessly designed, and incredibly intuitive.`,
     rating: 5,
   }
 ];
@@ -82,7 +83,7 @@ export default function Testimonials() {
             </h2>
 
             <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
-              Don't just take our word for it. Hear from the leaders who have revolutionized their operations with Nexiler.
+              Don't just take our word for it. Hear from the leaders who have revolutionized their operations with {companyConfig.name}.
             </p>
           </div>
         </div>

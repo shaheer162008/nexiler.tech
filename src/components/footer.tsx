@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Link2 } from "lucide-react"; // Using generic icon to replace specific social icons that might be missing
+import { GithubIcon } from "@/components/icons/mdi-github";
+import { LinkedinIcon } from "@/components/icons/mdi-linkedin";
+import { FacebookIcon } from "@/components/icons/mdi-facebook";
+import { InstagramIcon } from "@/components/icons/mdi-instagram";
+import { EmailIcon as Mail } from "@/components/icons/mdi-email";
+import { companyConfig } from "../../company.config"; // Using generic icon to replace specific social icons that might be missing
 import Link from "next/link";
 
 export default function Footer() {
@@ -25,14 +30,19 @@ export default function Footer() {
               <Link href="/" className="inline-block group">
                 <span className="text-2xl font-extrabold tracking-tighter text-white font-[family-name:var(--font-geist-sans)] flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-400 to-emerald-400 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
-                    <span className="w-full h-full bg-black rounded-md flex items-center justify-center text-sm">N</span>
+                    <span className="w-full h-full bg-black rounded-md flex items-center justify-center text-sm">{companyConfig.logo}</span>
                   </div>
-                  Nexiler
+                  {companyConfig.name}
                 </span>
               </Link>
               <p className="mt-6 text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed max-w-xs">
                 Empowering businesses with intelligent automation, stunning websites, and relentless performance.
               </p>
+              <div className="mt-4 space-y-1">
+                <p className="text-sm font-medium text-muted-foreground">{companyConfig.address}</p>
+                <p className="text-sm font-medium text-muted-foreground">{companyConfig.phone}</p>
+                <p className="text-sm font-medium text-muted-foreground">{companyConfig.email}</p>
+              </div>
             </motion.div>
           </div>
 
@@ -77,12 +87,32 @@ export default function Footer() {
               ))}
             </ul>
 
-            <div className="flex gap-4 pt-4">
-              {[1, 2, 3, 4].map((i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 hover:text-white transition-all hover:-translate-y-1">
-                  <Link2 className="w-4 h-4" />
+            <div className="flex gap-4 pt-4 mt-auto">
+              {companyConfig.socials.linkedin && (
+                <a href={companyConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 text-white transition-all hover:scale-110 shadow-sm shrink-0">
+                  <LinkedinIcon size={20} />
                 </a>
-              ))}
+              )}
+              {companyConfig.socials.github && (
+                <a href={companyConfig.socials.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 text-white transition-all hover:scale-110 shadow-sm shrink-0">
+                  <GithubIcon size={20} />
+                </a>
+              )}
+              {companyConfig.socials.facebook && (
+                <a href={companyConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 text-white transition-all hover:scale-110 shadow-sm shrink-0">
+                  <FacebookIcon size={20} />
+                </a>
+              )}
+              {companyConfig.socials.instagram && (
+                <a href={companyConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 text-white transition-all hover:scale-110 shadow-sm shrink-0">
+                  <InstagramIcon size={20} />
+                </a>
+              )}
+              {companyConfig.socials.email && (
+                <a href={companyConfig.socials.email} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground hover:bg-white/10 text-white transition-all hover:scale-110 shadow-sm shrink-0">
+                  <Mail size={20} />
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -90,10 +120,10 @@ export default function Footer() {
         {/* Bottom Banner */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)]">
-            &copy; {new Date().getFullYear()} Nexiler. All rights reserved.
+            &copy; {new Date().getFullYear()} {companyConfig.name}. All rights reserved.
           </p>
           <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] flex items-center gap-1">
-            Developed By Team Nexiler
+            Developed By Team {companyConfig.name}
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MessageSquare, Mail, Phone, MapPin, Send } from "lucide-react";
+import { companyConfig } from "../../company.config";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -54,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Email Us</p>
-                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">hello@nexiler.tech</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.email}</p>
                 </div>
               </div>
 
@@ -64,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Call Us</p>
-                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">+1 (555) 123-4567</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.phone}</p>
                 </div>
               </div>
 
@@ -74,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Visit Us</p>
-                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">123 Innovation Drive, Tech City</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.address}</p>
                 </div>
               </div>
             </div>

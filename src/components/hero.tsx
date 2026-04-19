@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Menu, X, Hexagon, Sparkles, ArrowRight } from 'lucide-react'
+import { companyConfig } from "../../company.config";
 
 // Custom Font implementation -> If you want any specific Google Font,
 // add it in layout.tsx first, then apply here. Right now we are using standard Inter/Geist fonts,
@@ -15,8 +16,8 @@ export default function Hero() {
   const heroProps = {
     logo: {
       src: "https://images.unsplash.com/photo-1616788812061-0af3684ac157?w=100&h=100&fit=crop&q=80",
-      alt: "Nexiler Logo",
-      companyName: "Nexiler"
+      alt: `${companyConfig.name} Logo`,
+      companyName: companyConfig.name
     },
     navigation: [
       { name: 'Solutions', href: '/solutions' },
@@ -27,7 +28,7 @@ export default function Hero() {
     ],
     loginText: "Sign In",
     loginHref: "/login",
-    title: "Make Your Business Work Smarter with Nexiler",
+    title: `Make Your Business Work Smarter with ${companyConfig.name}`,
     description: "We build websites, automate workflows, and help brands grow organically through AI driven systems designed for real results.",
     announcementBanner: {
       text: "Trusted by 50+ clients",

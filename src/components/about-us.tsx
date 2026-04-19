@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { companyConfig } from "../../company.config";
 
 export default function AboutUs() {
   return (
@@ -67,7 +68,7 @@ export default function AboutUs() {
             </span>
           </motion.div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-[family-name:var(--font-geist-sans)]">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Nexiler</span>
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">{companyConfig.name}</span>
           </h2>
           <p className="text-lg sm:text-xl font-medium text-pretty text-foreground max-w-2xl leading-relaxed font-[family-name:var(--font-geist-mono)]">
             We build beautiful, modern interfaces with our comprehensive toolset. No setup, no configuration needed. Focus on your business while we handle the rest.
