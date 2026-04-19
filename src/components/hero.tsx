@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Menu, X, Hexagon, Sparkles, ArrowRight } from 'lucide-react'
+import Image from 'next/image';
 import { companyConfig } from "../../company.config";
 
 // Custom Font implementation -> If you want any specific Google Font,
@@ -94,7 +95,7 @@ export default function Hero() {
         <nav aria-label="Global" className="flex items-center justify-between p-4 sm:p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-tighter text-foreground font-[family-name:var(--font-geist-sans)]">{logo?.companyName}</span>
+              <Image src="/nexiler.png" alt={logo?.companyName || companyConfig.name} width={140} height={40} className="h-10 w-auto object-contain" priority />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -104,20 +105,20 @@ export default function Hero() {
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-muted-foreground hover:text-foreground transition-colors"
             >
               <span className="sr-only">Open main menu</span>
-              <Menu aria-hidden="true" className="size-6" />
+              <Menu aria-hidden="true" className="size-7" />
             </button>
           </div>
           {navigation && navigation.length > 0 && (
             <div className="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+                <a key={item.name} href={item.href} className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors">
                   {item.name}
                 </a>
               ))}
             </div>
           )}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
-            <a href="/signup" className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
+            <a href="/signup" className="rounded-full bg-primary px-6 py-2.5 text-base font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
               Get Started
             </a>
           </div>
@@ -128,7 +129,7 @@ export default function Hero() {
           <DialogContent className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background/95 backdrop-blur-xl px-4 py-4 sm:px-6 sm:py-6 sm:max-w-sm sm:ring-1 sm:ring-border lg:hidden">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5 flex items-center gap-2">
-                <span className="font-extrabold text-2xl tracking-tighter text-foreground font-[family-name:var(--font-geist-sans)]">{logo?.companyName}</span>
+                <Image src="/nexiler.png" alt={logo?.companyName || companyConfig.name} width={140} height={40} className="h-10 w-auto object-contain" priority />
               </a>
               <button
                 type="button"
@@ -136,7 +137,7 @@ export default function Hero() {
                 className="-m-2.5 rounded-md p-2.5 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <span className="sr-only">Close menu</span>
-                <X aria-hidden="true" className="size-6" />
+                <X aria-hidden="true" className="size-7" />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -147,7 +148,7 @@ export default function Hero() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="-mx-3 block rounded-lg px-3 py-3 text-lg font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         {item.name}
                       </a>
@@ -157,7 +158,7 @@ export default function Hero() {
                 <div className="py-6">
                   <a
                     href="/signup"
-                    className="-mx-3 flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                    className="-mx-3 flex items-center justify-center rounded-lg bg-primary px-3 py-3.5 text-lg font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     Get Started Free
                   </a>

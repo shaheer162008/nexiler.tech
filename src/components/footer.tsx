@@ -8,6 +8,7 @@ import { InstagramIcon } from "@/components/icons/mdi-instagram";
 import { EmailIcon as Mail } from "@/components/icons/mdi-email";
 import { companyConfig } from "../../company.config"; // Using generic icon to replace specific social icons that might be missing
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -28,12 +29,13 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="inline-block group">
-                <span className="text-2xl font-extrabold tracking-tighter text-white font-[family-name:var(--font-geist-sans)] flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-400 to-emerald-400 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
-                    <span className="w-full h-full bg-black rounded-md flex items-center justify-center text-sm">{companyConfig.logo}</span>
-                  </div>
-                  {companyConfig.name}
-                </span>
+                <Image 
+                  src="/nexiler.png" 
+                  alt={companyConfig.name} 
+                  width={140} 
+                  height={40} 
+                  className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity" 
+                />
               </Link>
               <p className="mt-6 text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed max-w-xs">
                 Empowering businesses with intelligent automation, stunning websites, and relentless performance.
