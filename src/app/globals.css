@@ -105,6 +105,8 @@
 html, body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 @theme {
   --animate-first: moveVertical 30s ease infinite;

@@ -57,7 +57,7 @@ export default function Hero() {
   } = heroProps;
 
   return (
-    <div className="relative isolate w-full font-[family-name:var(--font-geist-sans)] pb-12 sm:pb-16 pt-8">
+    <div className="relative isolate w-full overflow-clip font-[family-name:var(--font-geist-sans)] pb-12 sm:pb-16 pt-8">
       {/* Top gradient background */}
       <div
         aria-hidden="true"
@@ -168,9 +168,9 @@ export default function Hero() {
       </header>
 
       {/* Main Hero Section */}
-      <div className="relative isolate px-6 pt-16 sm:pt-24 overflow-hidden flex flex-col justify-center items-center">        
+      <div className="relative isolate px-6 pt-16 sm:pt-24 flex flex-col justify-center items-center">
         <div className="mx-auto max-w-4xl text-center z-10">
-          
+
           {/* CUSTOMIZED BADGE (Announcement Banner) */}
           {announcementBanner && (
             <div className="mb-8 flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out">

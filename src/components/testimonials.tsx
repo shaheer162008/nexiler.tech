@@ -32,7 +32,7 @@ const testimonials = [
 ];
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
@@ -43,7 +43,7 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 1, y: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -60,42 +60,31 @@ export default function Testimonials() {
     <section id="testimonials" className="relative isolate w-full bg-transparent pt-10 sm:pt-16 pb-12 sm:pb-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
 
       <div className="mx-auto px-6 md:px-12 max-w-[85rem] relative z-10">
-        
+
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-16 sm:mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
-          >
-            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
-              Client Stories
-            </span>
-          </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-4 leading-tight"
-          >
-            Trusted by the <br className="hidden sm:block"/>
-            <span className="text-foreground">Best in the Business</span>
-          </motion.h2>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl font-medium text-muted-foreground/80 max-w-2xl font-[family-name:var(--font-geist-mono)] leading-relaxed"
-          >
-            Don't just take our word for it. Hear from the leaders who have revolutionized their operations with Nexiler.
-          </motion.p>
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+          <div className="max-w-2xl text-left flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 1, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
+            >
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                Client Stories
+              </span>
+            </motion.div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Trusted by the Best in the Business
+            </h2>
+
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+              Don't just take our word for it. Hear from the leaders who have revolutionized their operations with Nexiler.
+            </p>
+          </div>
         </div>
 
         {/* Testimonials Grid */}
@@ -103,7 +92,7 @@ export default function Testimonials() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "0px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {testimonials.map((testimonial, idx) => (

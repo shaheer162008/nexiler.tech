@@ -22,7 +22,7 @@ import {
 
 // --- Animation variants for Framer Motion ---
 const containerVariants: any = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
@@ -33,7 +33,7 @@ const containerVariants: any = {
 };
 
 const itemVariants: any = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -117,7 +117,7 @@ const FocusCard = () => (
           <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Focusing</CardTitle>
           <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium mt-2">Productivity Analytics</CardDescription>
         </div>
-        <Badge variant="outline" className="border-orange-300 text-foreground font-[family-name:var(--font-geist-mono)]">
+        <Badge variant="outline" className="border-orange-300 text-foreground font-[family-name:var(--font-geist-mono)] whitespace-nowrap shrink-0">
           Range Ratio
         </Badge>
       </div>
@@ -201,7 +201,7 @@ export const BentoGridShowcase = ({
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "0px" }}
       className={cn(
         // Core grid layout: 1 col on mobile, 3 on desktop
         "grid w-full grid-cols-1 gap-6 md:grid-cols-3",
@@ -250,26 +250,28 @@ export default function Features() {
   return (
     <div className="relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8 w-full">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-10 md:mb-14 font-[family-name:var(--font-geist-sans)] max-w-2xl mx-auto text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
-          >
-            <Command className="w-4 h-4 text-primary" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
-              Core Capabilities
-            </span>
-          </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-            Product Features
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
-            Organize, prioritize and control track your tasks more efficiently
-            in our trusted platform
-          </p>
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+          <div className="max-w-2xl text-left flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 1, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
+            >
+              <Command className="w-4 h-4 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                Core Capabilities
+              </span>
+            </motion.div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Product Features
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+              Organize, prioritize and control track your tasks more efficiently
+              in our trusted platform
+            </p>
+          </div>
         </div>
 
         <BentoGridShowcase />

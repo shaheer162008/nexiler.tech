@@ -56,55 +56,45 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section className="relative w-full bg-transparent py-4 sm:py-6 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
+    <section className="relative w-full bg-transparent py-12 sm:py-16 md:py-24 font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">   
       {/* Background gradients for premium feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 blur-[100px] bg-[conic-gradient(from_90deg,theme(colors.zinc.800),theme(colors.zinc.900),theme(colors.zinc.700),theme(colors.zinc.800))]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
-          >
-            <Gem className="w-4 h-4 text-foreground" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
-              Pricing Plans
-            </span>
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6"
-          >
-            Transparent <span className="text-foreground">Pricing</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground/90 max-w-2xl font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed"
-          >
-            Choose the perfect plan tailored to accelerate your business growth. No hidden fees, just value.
-          </motion.p>
+<div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+            <div className="max-w-2xl text-left flex flex-col items-start">
+              <motion.div
+                initial={{ opacity: 1, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
+              >
+                <Gem className="w-4 h-4 text-foreground" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                  Pricing Plans
+                </span>
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+                Transparent Pricing
+              </h2>
+              <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+                Choose the perfect plan tailored to accelerate your business growth. No hidden fees, just value.
+              </p>
+            </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative items-center">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`relative flex flex-col h-full rounded-[2.5rem] p-8 sm:p-10 transition-all duration-300 ${
+              className={`relative flex flex-col h-full rounded-[2.5rem] p-6 sm:p-8 md:p-10 transition-all duration-300 ${
                 plan.popular 
                 ? "bg-secondary/40 border border-white/20 shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)] transform md:-translate-y-4" 
                 : "bg-card/40 border border-white/5 hover:border-white/10 hover:bg-card/60"
@@ -121,9 +111,7 @@ export default function Pricing() {
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
-                  <div className="p-2 rounded-xl bg-background/50 border border-white/5">
-                    {plan.icon}
-                  </div>
+
                 </div>
                 <p className="text-sm text-muted-foreground/90 font-[family-name:var(--font-geist-mono)] min-h-[3rem]">
                   {plan.description}
@@ -131,7 +119,7 @@ export default function Pricing() {
               </div>
 
               <div className="mb-8 flex items-baseline gap-2">
-                <span className="text-5xl font-extrabold tracking-tighter text-foreground">{plan.price}</span>
+                <span className="text-4xl sm:text-5xl font-extrabold tracking-tighter text-foreground">{plan.price}</span>
                 {plan.price !== "Custom" && <span className="text-muted-foreground font-medium">/project</span>}
               </div>
 

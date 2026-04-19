@@ -8,67 +8,73 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   return (
-    <section className="relative w-full py-6 sm:py-10 bg-transparent font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
+    <section className="relative w-full py-10 sm:py-16 md:py-24 bg-transparent font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left Text / Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-start"
-          >
+
+        {/* Section Header - Styled Exactly Like Services */}
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+          <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px" }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md"
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <MessageSquare className="w-4 h-4 text-foreground" />
               <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
                 Get In Touch
               </span>
             </motion.div>
-            
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6">
-              Let's craft your <span className="text-foreground">success story.</span>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Let's craft your success story.
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)] leading-relaxed">
               Whether you have a question, a project idea, or just want to say hi, we're here to help you navigate the digital landscape.
             </p>
+          </div>
+        </div>
 
-            <div className="space-y-6 w-full">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-card border border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+
+          {/* Left Text / Info (Only contacts now) */}
+          <motion.div
+            initial={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "0px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-start w-full font-[family-name:var(--font-geist-sans)]"
+          >
+
+            <div className="space-y-6 w-full md:pr-8">
+              <div className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-card border border-white/5 backdrop-blur-md hover:border-white/10 transition-colors w-full">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/50 border border-white/10 shrink-0">
                   <Mail className="w-5 h-5 text-foreground" />
                 </div>
-                <div>
+                <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Email Us</p>
-                  <p className="text-lg font-semibold text-foreground">hello@nexiler.tech</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">hello@nexiler.tech</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-card border border-white/10">
+              <div className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-card border border-white/5 backdrop-blur-md hover:border-white/10 transition-colors w-full">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/50 border border-white/10 shrink-0">
                   <Phone className="w-5 h-5 text-foreground" />
                 </div>
-                <div>
+                <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Call Us</p>
-                  <p className="text-lg font-semibold text-foreground">+1 (555) 123-4567</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">+1 (555) 123-4567</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-card border border-white/10">
+              <div className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-card border border-white/5 backdrop-blur-md hover:border-white/10 transition-colors w-full">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/50 border border-white/10 shrink-0">
                   <MapPin className="w-5 h-5 text-foreground" />
                 </div>
-                <div>
+                <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Visit Us</p>
-                  <p className="text-lg font-semibold text-foreground">123 Innovation Drive, Tech City</p>
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">123 Innovation Drive, Tech City</p>
                 </div>
               </div>
             </div>
@@ -76,9 +82,9 @@ export default function Contact() {
 
           {/* Right Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 1, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full relative"
           >

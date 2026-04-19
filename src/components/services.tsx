@@ -25,7 +25,7 @@ import {
 import Link from "next/link";
 
 const containerVariants: any = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
@@ -36,7 +36,7 @@ const containerVariants: any = {
 };
 
 const itemVariants: any = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -101,20 +101,16 @@ const servicesList = [
 
 export function ServicesBentoGrid() {
   return (
-    <motion.section
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      className="grid w-full grid-cols-1 gap-6 md:grid-cols-4 auto-rows-[minmax(160px,auto)]"
-    >
+    <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-4 auto-rows-[minmax(160px,auto)] relative z-20">
       {servicesList.map((service, index) => (
-        <motion.div 
-          key={index} 
-          variants={itemVariants} 
+        <motion.div
+          key={index}
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
           className={service.colSpan}
           whileHover={{ y: -8, scale: 1.01 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <Card className="relative rounded-[2rem] h-full flex flex-col font-[family-name:var(--font-geist-sans)] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer">
             {/* Subtle Gradient Glow effect on hover */}
@@ -139,7 +135,7 @@ export function ServicesBentoGrid() {
           </Card>
         </motion.div>
       ))}
-    </motion.section>
+    </div>
   );
 }
 
@@ -150,7 +146,7 @@ export default function Services() {
         <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 font-[family-name:var(--font-geist-sans)]">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}

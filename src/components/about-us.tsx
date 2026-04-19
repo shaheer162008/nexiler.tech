@@ -8,18 +8,18 @@ import { BackgroundGradientAnimation } from "@/components/ui/background-gradient
 
 export default function AboutUs() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-transparent text-white px-8 pb-0 pt-8 md:pt-10 md:pb-0 md:px-16 font-[family-name:var(--font-geist-sans)] z-0">
+    <section className="relative isolate w-full bg-transparent text-white px-8 pb-0 pt-8 md:pt-10 md:pb-0 md:px-16 font-[family-name:var(--font-geist-sans)] z-0">
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 relative z-10">
         {/* LEFT: Text */}
         <div 
-          className="relative mx-auto flex h-[40rem] w-full max-w-[60rem] items-center justify-center overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border border-white/5 isolate bg-black"
+          className="relative mx-auto flex h-[30rem] sm:h-[40rem] w-full max-w-[60rem] items-center justify-center overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border border-white/5 isolate bg-black"
           style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
         >
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none">
               {/* Inner card hovering above the gradient */}
-              <Card className="w-[340px] z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl pointer-events-auto">
+              <Card className="w-[90%] sm:w-[340px] z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl pointer-events-auto">
             <CardContent className="p-6 font-[family-name:var(--font-geist-mono)]">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -49,13 +49,13 @@ export default function AboutUs() {
         {/* RIGHT: Text Content */}
         <motion.div 
           className="space-y-6 flex flex-col items-start"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "0px" }}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 1, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}

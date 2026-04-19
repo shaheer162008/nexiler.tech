@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
@@ -16,7 +16,7 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 1, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
@@ -75,37 +75,30 @@ const projects = [
 
 export default function OurWork() {
   return (
-    <section id="work" className="relative isolate w-full bg-transparent pt-20 sm:pt-32 pb-10 sm:pb-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
+    <section id="work" className="relative isolate w-full bg-transparent pt-20 sm:pt-32 pb-10 sm:pb-16 font-[family-name:var(--font-geist-sans)] z-10">
 
       <div className="mx-auto px-6 md:px-12 max-w-[85rem]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
+<div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+          <div className="max-w-2xl text-left flex flex-col items-start">
+            <motion.div 
+              initial={{ opacity: 1, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
+            >
               <div className="w-2 h-2 rounded-full bg-primary animate-[pulse_2s_ease-in-out_infinite]" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-primary font-[family-name:var(--font-geist-mono)]">Premium Portfolio</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-foreground mb-6 leading-[1.1]">
-              Crafting Digital <br className="hidden md:block"/>
-              <span className="text-foreground">Masterpieces</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                Premium Portfolio
+              </span>
+            </motion.div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Crafting Digital Masterpieces
             </h2>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          >
-            <p className="text-lg md:text-xl font-medium text-muted-foreground/80 max-w-md font-[family-name:var(--font-geist-mono)] leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
               Explore our carefully curated selection of visionary projects. We don't just build software; we engineer exceptional experiences.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Premium Bento Grid */}
@@ -113,8 +106,8 @@ export default function OurWork() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(350px,_1fr)] gap-6 lg:gap-8"
+          viewport={{ once: true, margin: "0px" }}
+          className="grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(280px,_1fr)] sm:auto-rows-[minmax(350px,_1fr)] gap-6 lg:gap-8"
         >
           {projects.map((project, index) => (
             <motion.div 
@@ -144,7 +137,7 @@ export default function OurWork() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   
-                  <div className="absolute inset-0 z-20 flex flex-col justify-between p-8 sm:p-10 pointer-events-none">
+                  <div className="absolute inset-0 z-20 flex flex-col justify-between p-6 sm:p-8 md:p-10 pointer-events-none">
                     <div className="flex flex-wrap items-start justify-between gap-4">
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, tagIndex) => (

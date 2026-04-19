@@ -12,7 +12,7 @@ import { GridBackground } from "@/components/ui/grid-background";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-background relative max-w-[100vw] overflow-x-hidden">
+    <main className="flex flex-col bg-background relative w-full overflow-x-hidden">
       <Hero />
       <GridBackground>
         <Services />
