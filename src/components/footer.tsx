@@ -30,7 +30,7 @@ export default function Footer() {
             >
               <Link href="/" className="inline-block group">
                 <Image 
-                  src="/nexiler.png" 
+                  src={companyConfig.logo} 
                   alt={companyConfig.name} 
                   width={140} 
                   height={40} 
