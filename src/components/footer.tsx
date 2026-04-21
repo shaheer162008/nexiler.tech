@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black font-[family-name:var(--font-geist-sans)] z-10 border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-black font-sans z-10 border-t border-white/5 overflow-hidden">
       
       {/* Subtle top glow matching Next.js dark themes */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -29,15 +29,9 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="inline-block group">
-                <Image 
-                  src={companyConfig.logo} 
-                  alt={companyConfig.name} 
-                  width={140} 
-                  height={40} 
-                  className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity" 
-                />
+                <span className="font-negan text-3xl font-normal lowercase tracking-wide group-hover:opacity-80 transition-opacity text-white">nexiler</span>
               </Link>
-              <p className="mt-6 text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] leading-relaxed max-w-xs">
+              <p className="mt-6 text-sm text-foreground font-medium leading-relaxed max-w-xs">
                 Empowering businesses with intelligent automation, stunning websites, and relentless performance.
               </p>
               <div className="mt-4 space-y-1">
