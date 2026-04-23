@@ -112,38 +112,40 @@ export function ServicesBentoGrid() {
           className={service.colSpan}
           whileHover={{ y: -8, scale: 1.01 }}
         >
-          <Card className="relative rounded-[2rem] h-full flex flex-col font-[family-name:var(--font-geist-sans)] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer">
-            {/* Subtle Gradient Glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-            
-            <CardHeader className="flex-1 p-6 relative z-10">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 border border-white/10 group-hover:bg-white/10 group-hover:scale-110 transition-all duration-500 ease-out">
-                  {service.icon}
+          <Link href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} className="block h-full">
+            <Card className="relative rounded-[2rem] h-full flex flex-col font-sans group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer">
+              {/* Subtle Gradient Glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+              
+              <CardHeader className="flex-1 p-6 relative z-10">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 border border-white/10 group-hover:bg-white/10 group-hover:scale-110 transition-all duration-500 ease-out">
+                    {service.icon}
+                  </div>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 border border-white/10 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <ArrowUpRight className="h-4 w-4 text-white/70" />
+                  </div>
                 </div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 border border-white/10 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                  <ArrowUpRight className="h-4 w-4 text-white/70" />
-                </div>
-              </div>
-              <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300">
-                {service.title}
-              </CardTitle>
-              <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed mt-2 group-hover:text-muted-foreground transition-colors duration-300">
-                {service.description}
-              </CardDescription>
-            </CardHeader>
-          </Card>
+                <CardTitle className="text-xl sm:text-2xl font-mono font-extrabold tracking-tighter group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-muted-foreground/90 font-mono font-medium leading-relaxed mt-2 group-hover:text-muted-foreground transition-colors duration-300">
+                  {service.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
         </motion.div>
       ))}
     </div>
   );
 }
 
-export default function Services() {
+export default function Services({ hideViewAll = false }: { hideViewAll?: boolean }) {
   return (
     <div className="relative z-10 py-10 sm:py-16 border-b border-border/5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 font-[family-name:var(--font-geist-sans)]">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 font-sans">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
               initial={{ opacity: 1, scale: 0.9 }}
@@ -153,25 +155,28 @@ export default function Services() {
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <Cpu className="w-4 h-4 text-foreground" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                 Expertise
               </span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
               Our Services
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono">
               End-to-end digital solutions designed to elevate your brand, automate your workflows, and drive measurable ROI.
             </p>
           </div>
-          <div className="flex-shrink-0 relative z-20">
-            <Link href="/services">
-              <Button variant="secondary" className="rounded-full font-[family-name:var(--font-geist-sans)] font-bold tracking-tight bg-secondary border-white/10 group hover:bg-secondary/80">
-                View all services
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </div>
+          
+          {!hideViewAll && (
+            <div className="flex-shrink-0 relative z-20">
+              <Link href="/services">
+                <Button variant="secondary" className="rounded-full font-sans font-bold tracking-tight bg-secondary border-white/10 group hover:bg-secondary/80">
+                  View all services
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
 
         <ServicesBentoGrid />

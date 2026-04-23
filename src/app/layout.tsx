@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "@fontsource/geist-sans";
+import "@fontsource/geist-mono";
 import "./globals.css";
 
 const neganFont = localFont({
@@ -22,7 +24,7 @@ export default function RootLayout({
       lang="en"
       className={`${neganFont.variable} font-sans h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden bg-background text-foreground">{children}</body>
     </html>
   );
 }

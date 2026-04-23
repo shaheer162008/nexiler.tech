@@ -10,7 +10,7 @@ import { companyConfig } from "../../company.config";
 // add it in layout.tsx first, then apply here. Right now we are using standard Inter/Geist fonts,
 // but I've updated heading classes to be more prominent.
 
-export default function Hero() {
+export default function Hero(props: any) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Example Settings (Merged from demo.tsx)
@@ -21,22 +21,23 @@ export default function Hero() {
       companyName: companyConfig.name
     },
     navigation: [
-      { name: 'Solutions', href: '/solutions' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Resources', href: '/resources' },
+      { name: 'Features', href: '/#features' },
+      { name: 'Services', href: '/services' },
+      { name: 'Packages', href: '/#packages' },
+      { name: 'Our Work', href: '/our-work' },
       { name: 'About', href: '/about' },
       { name: 'Contact', href: '/contact' },
     ],
     loginText: "Sign In",
     loginHref: "/login",
-    title: `Make Your Business Work Smarter with ${companyConfig.name}`,
-    description: "We build websites, automate workflows, and help brands grow organically through AI driven systems designed for real results.",
-    announcementBanner: {
+    title: props.title || `Make Your Business Work Smarter with ${companyConfig.name}`,
+    description: props.description || "We build websites, automate workflows, and help brands grow organically through AI driven systems designed for real results.",
+    announcementBanner: props.announcementBanner || {
       text: "Trusted by 50+ clients",
       linkText: "",
       linkHref: "/features/ai-assistant"
     },
-    callToActions: [
+    callToActions: props.callToActions || [
       { text: "Get Free Consultation", href: "/signup", variant: "primary" as const },
       { text: "View Our Work", href: "/demo", variant: "secondary" as const }
     ],
@@ -59,7 +60,7 @@ export default function Hero() {
   } = heroProps;
 
   return (
-    <div className="relative isolate w-full overflow-clip font-[family-name:var(--font-geist-sans)] pb-12 sm:pb-16 pt-8">
+    <div className="relative isolate w-full font-sans pb-12 sm:pb-16 pt-8">
       {/* Top gradient background */}
       <div
         aria-hidden="true"
@@ -195,17 +196,17 @@ export default function Hero() {
           
           {/* Hero Content - Customized Typography */}
           <div className="animate-in fade-in slide-in-from-bottom-6 duration-700 ease-out delay-150 fill-mode-both">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter text-balance text-foreground mb-6 font-[family-name:var(--font-geist-sans)]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter text-balance text-foreground mb-6 font-sans">
               {title}
             </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl font-medium text-pretty text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-medium text-pretty text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed font-mono">
               {description}
             </p>
             
             {/* Call to action buttons */}
             {callToActions && callToActions.length > 0 && (
               <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 group">
-                {callToActions.map((cta, index) => (
+                {callToActions.map((cta: any, index: number) => (
                   <a
                     key={index}
                     href={cta.href}

@@ -58,12 +58,12 @@ const itemVariants: Variants = {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative isolate w-full bg-transparent pt-10 sm:pt-16 pb-12 sm:pb-16 overflow-hidden font-[family-name:var(--font-geist-sans)] z-10">
+    <section id="testimonials" className="relative isolate w-full bg-transparent pt-10 sm:pt-16 pb-12 sm:pb-16 overflow-hidden font-sans z-10">
 
       <div className="mx-auto px-6 md:px-12 max-w-[85rem] relative z-10">
 
         {/* Header */}
-        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-sans">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
               initial={{ opacity: 1, scale: 0.9 }}
@@ -73,7 +73,7 @@ export default function Testimonials() {
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                 Client Stories
               </span>
             </motion.div>
@@ -82,7 +82,7 @@ export default function Testimonials() {
               Trusted by the Best in the Business
             </h2>
 
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono">
               Don't just take our word for it. Hear from the leaders who have revolutionized their operations with {companyConfig.name}.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function Testimonials() {
                   <h4 className="text-base font-bold text-white tracking-tight">
                     {testimonial.name}
                   </h4>
-                  <p className="text-xs text-muted-foreground font-[family-name:var(--font-geist-mono)] font-medium">
+                  <p className="text-xs text-muted-foreground font-mono font-medium">
                     {testimonial.role}, <span className="text-primary/90">{testimonial.company}</span>
                   </p>
                 </div>

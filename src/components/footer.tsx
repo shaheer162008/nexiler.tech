@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Column 2: Links */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-[family-name:var(--font-geist-mono)]">Company</h3>
+            <h3 className="text-smfont-mono">Company</h3>
             <ul className="space-y-4">
               {['About Us', 'Careers', 'Our Work', 'Contact', 'Blog'].map((link, i) => (
                 <li key={i}>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Column 3: Services */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-[family-name:var(--font-geist-mono)]">Services</h3>
+            <h3 className="text-smfont-mono">Services</h3>
             <ul className="space-y-4">
               {['Web Development', 'AI Automation', 'Mobile Apps', 'Branding', 'SEO & Marketing'].map((link, i) => (
                 <li key={i}>
@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* Column 4: Legal & Social */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-[family-name:var(--font-geist-mono)]">Legal</h3>
+            <h3 className="text-smfont-mono">Legal</h3>
             <ul className="space-y-4 mb-8">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link, i) => (
                 <li key={i}>
@@ -115,10 +115,10 @@ export default function Footer() {
 
         {/* Bottom Banner */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)]">
+          <p className="font-mono">
             &copy; {new Date().getFullYear()} {companyConfig.name}. All rights reserved.
           </p>
-          <p className="text-sm text-foreground font-medium font-[family-name:var(--font-geist-mono)] flex items-center gap-1">
+          <p className="font-mono">
             Developed By Team {companyConfig.name}
           </p>
         </div>

@@ -6,22 +6,22 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { companyConfig } from "../../company.config";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <section className="relative isolate w-full bg-transparent text-white px-8 pb-0 pt-8 md:pt-10 md:pb-0 md:px-16 font-[family-name:var(--font-geist-sans)] z-0">
+    <section className="relative isolate w-full bg-transparent text-white px-8 pb-0 pt-8 md:pt-10 md:pb-0 md:px-16 font-sans z-0 overflow-hidden">
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 relative z-10">
         {/* LEFT: Text */}
         <div 
-          className="relative mx-auto flex h-[30rem] sm:h-[40rem] w-full max-w-[60rem] items-center justify-center overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border border-white/5 isolate bg-black"
-          style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+          className="relative mx-auto flex h-[30rem] sm:h-[40rem] w-full max-w-[60rem] items-center justify-center overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border border-white/10 isolate bg-card/80 backdrop-blur-md shadow-[0_18px_70px_rgba(0,0,0,0.2)]"
         >
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none">
               {/* Inner card hovering above the gradient */}
-              <Card className="w-[90%] sm:w-[340px] z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl pointer-events-auto">
-            <CardContent className="p-6 font-[family-name:var(--font-geist-mono)]">
+              <Card className="w-[90%] sm:w-85 z-10 rounded-[2rem] border border-white/10 bg-black/85 shadow-2xl backdrop-blur-xl pointer-events-auto">
+            <CardContent className="p-6 font-sans">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
@@ -32,7 +32,7 @@ export default function AboutUs() {
 
               {/* Progress bar */}
               <div className="mb-5 h-1.5 w-full overflow-hidden rounded-full bg-white/10 relative">
-                <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.6)] animate-[pulse_2s_ease-in-out_infinite]" />
+                <div className="h-full w-[92%] rounded-full bg-linear-to-r from-sky-400 via-indigo-500 to-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.6)] animate-[pulse_2s_ease-in-out_infinite]" />
               </div>
 
               <p className="text-xs text-muted-foreground font-medium leading-relaxed">
@@ -63,18 +63,20 @@ export default function AboutUs() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 backdrop-blur-md mb-2"
           >
             <span className="w-2 h-2 rounded-full bg-sky-400 animate-[pulse_2s_ease-in-out_infinite]" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-white font-[family-name:var(--font-geist-mono)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-white font-sans">
               Who We Are
             </span>
           </motion.div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-[family-name:var(--font-geist-sans)]">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">{companyConfig.name}</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-balance text-white mb-4 font-sans">
+              About <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-white/70">{companyConfig.name}</span>
           </h2>
-          <p className="text-lg sm:text-xl font-medium text-pretty text-foreground max-w-2xl leading-relaxed font-[family-name:var(--font-geist-mono)]">
+          <p className="font-mono">
             We build beautiful, modern interfaces with our comprehensive toolset. No setup, no configuration needed. Focus on your business while we handle the rest.
           </p>
           <Button variant="link" className="px-0 pt-4 text-white text-base sm:text-lg tracking-tight font-semibold hover:text-white/80 transition-colors group">
-            Meet the team <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <Link href="/about#linkedin-section" className="flex items-center">
+              Meet the team <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </motion.div>
       </div>

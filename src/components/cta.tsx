@@ -7,7 +7,7 @@ import { companyConfig } from "../../company.config";
 
 export default function CTA() {
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-24 bg-transparent font-[family-name:var(--font-geist-sans)] border-t border-border/5">       
+    <section className="relative w-full py-12 sm:py-16 md:py-24 bg-transparent font-sans">       
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-20 blur-[120px] bg-[conic-gradient(from_180deg,theme(colors.zinc.700),theme(colors.zinc.900),theme(colors.zinc.600),theme(colors.zinc.700))]" />
@@ -26,7 +26,7 @@ export default function CTA() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md mb-8"
           >
             <Rocket className="w-4 h-4 text-foreground" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
               Start Your Journey
             </span>
           </motion.div>
@@ -46,7 +46,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl font-medium text-muted-foreground/90 max-w-2xl mb-10 font-[family-name:var(--font-geist-mono)] leading-relaxed"
+              className="text-lg sm:text-xl font-medium text-muted-foreground/90 max-w-2xl mb-10 font-mono leading-relaxed"
             >
               Join visionary brands growing with {companyConfig.name}. Let's build something extraordinary together. No commitments, just pure value.
             </motion.p>

@@ -9,11 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   return (
-    <section className="relative w-full py-10 sm:py-16 md:py-24 bg-transparent font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">
+    <section className="relative w-full py-10 sm:py-16 md:py-24 bg-transparent font-sans z-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Section Header - Styled Exactly Like Services */}
-        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-sans">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
               initial={{ opacity: 1, scale: 1 }}
@@ -23,7 +23,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <MessageSquare className="w-4 h-4 text-foreground" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                 Get In Touch
               </span>
             </motion.div>
@@ -31,7 +31,7 @@ export default function Contact() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
               Let's craft your success story.
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)] leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono leading-relaxed">
               Whether you have a question, a project idea, or just want to say hi, we're here to help you navigate the digital landscape.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "0px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col items-start w-full font-[family-name:var(--font-geist-sans)]"
+            className="flex flex-col items-start w-full font-sans"
           >
 
             <div className="space-y-6 w-full md:pr-8">
@@ -54,7 +54,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-foreground" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Email Us</p>
+                  <p className="text-sm text-muted-foreground font-medium font-mono">Email Us</p>
                   <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.email}</p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-foreground" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Call Us</p>
+                  <p className="text-sm text-muted-foreground font-medium font-mono">Call Us</p>
                   <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.phone}</p>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-foreground" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm text-muted-foreground font-medium font-[family-name:var(--font-geist-mono)]">Visit Us</p>
+                  <p className="text-sm text-muted-foreground font-medium font-mono">Visit Us</p>
                   <p className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">{companyConfig.address}</p>
                 </div>
               </div>

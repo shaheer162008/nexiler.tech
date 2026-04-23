@@ -1,0 +1,27 @@
+import Hero from "@/components/hero";
+import Services from "@/components/services";
+import Features from "@/components/features";
+import { ServicesImportance } from "@/components/services/importance";
+import Footer from "@/components/footer";
+import { GridBackground } from "@/components/ui/grid-background";
+import { ServicesFaq } from "@/components/services/faq";
+
+export default function ServicesPage() {
+  return (
+    <main className="flex flex-col bg-background relative w-full overflow-x-hidden">
+      <Hero 
+        title="Smart Services That
+Move Your Business Forward." 
+        description="Web design, workflow automation, organic growth, and AI systems built around your goals, not generic templates."
+        announcementBanner={{ text: "Fuel Your Growth", linkText: "", linkHref: "#" }}
+      />
+      <GridBackground>
+        <Services hideViewAll={true} />
+        <Features />
+        <ServicesImportance />
+        <ServicesFaq />
+        <Footer />
+      </GridBackground>
+    </main>
+  );
+}

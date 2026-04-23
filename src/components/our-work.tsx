@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const containerVariants: Variants = {
@@ -60,7 +61,22 @@ const projects = [
     image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=2340&auto=format&fit=crop",
     colSpan: "md:col-span-2 md:row-span-1",
     tags: ["Vue", "Node.js", "PostgreSQL"],
-    isViewMore: false
+  },
+  {
+    title: "Studio Pulse",
+    category: "Creative Campaigns",
+    description: "A cinematic brand launch experience with high-converting landing pages and motion-led storytelling.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2400&auto=format&fit=crop",
+    colSpan: "md:col-span-1 md:row-span-1",
+    tags: ["Design", "Motion", "Branding"],
+  },
+  {
+    title: "Northstar Analytics",
+    category: "Data Platform",
+    description: "An executive analytics dashboard for teams who need clarity, forecasting, and performance tracking.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
+    colSpan: "md:col-span-1 md:row-span-1",
+    tags: ["Analytics", "Dashboards", "AI"],
   },
   {
     title: "View More",
@@ -73,12 +89,14 @@ const projects = [
   }
 ];
 
-export default function OurWork() {
-  return (
-    <section id="work" className="relative isolate w-full bg-transparent pt-20 sm:pt-32 pb-10 sm:pb-16 font-[family-name:var(--font-geist-sans)] z-10">
+export default function OurWork({ hideViewMore }: { hideViewMore?: boolean }) {
+  const displayProjects = hideViewMore ? projects.filter(p => !p.isViewMore) : projects;
 
-      <div className="mx-auto px-6 md:px-12 max-w-[85rem]">
-<div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+  return (
+    <section id="work" className="relative isolate w-full bg-transparent pt-20 sm:pt-32 pb-10 sm:pb-16 font-sans z-10">
+
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-sans">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div 
               initial={{ opacity: 1, scale: 0.9 }}
@@ -88,15 +106,15 @@ export default function OurWork() {
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <div className="w-2 h-2 rounded-full bg-primary animate-[pulse_2s_ease-in-out_infinite]" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                 Premium Portfolio
               </span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
               Crafting Digital Masterpieces
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
-              Explore our carefully curated selection of visionary projects. We don't just build software; we engineer exceptional experiences.
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono">
+              Explore our carefully curated selection of visionary projects. We don&apos;t just build software; we engineer exceptional experiences.
             </p>
           </div>
         </div>
@@ -107,9 +125,9 @@ export default function OurWork() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px" }}
-          className="grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(280px,_1fr)] sm:auto-rows-[minmax(350px,_1fr)] gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(320px,1fr)] sm:auto-rows-[minmax(400px,1fr)] gap-6 lg:gap-8"
         >
-          {projects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <motion.div 
               key={index}
               variants={itemVariants}
@@ -117,17 +135,17 @@ export default function OurWork() {
               className={`group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-card isolate ${project.colSpan}`}
             >
               {project.isViewMore ? (
-                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-8 text-center cursor-pointer transition-colors duration-300 hover:bg-white/5">
+                <Link href="/our-work" className="absolute inset-0 z-20 flex flex-col items-center justify-center p-8 text-center cursor-pointer transition-colors duration-300 hover:bg-white/5">
                   <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 bg-white/5">
                     <ArrowUpRight className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold tracking-tighter text-white">View More</h3>
-                  <p className="text-muted-foreground mt-2 text-sm font-[family-name:var(--font-geist-mono)]">See all our projects</p>
-                </div>
+                  <p className="text-muted-foreground mt-2 text-sm font-mono">See all our projects</p>
+                </Link>
               ) : (
                 <>
                   {/* Cinematic Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-500 group-hover:via-black/50" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-500 group-hover:via-black/50" />
                   
                   <Image
                     src={project.image}
@@ -143,7 +161,7 @@ export default function OurWork() {
                         {project.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex} 
-                            className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-xs font-semibold text-white tracking-wide font-[family-name:var(--font-geist-mono)] shadow-lg"
+                            className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-xs font-semibold text-white tracking-wide font-sans shadow-lg"
                           >
                             {tag}
                           </span>
@@ -156,13 +174,13 @@ export default function OurWork() {
                     </div>
 
                     <div className="transform translate-y-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
-                      <span className="text-primary font-bold tracking-widest uppercase text-xs font-[family-name:var(--font-geist-mono)] block mb-2 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="text-primary font-bold tracking-widest uppercase text-xs font-sans block mb-2 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
                         {project.category}
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-2 shadow-black drop-shadow-xl">
                         {project.title}
                       </h3>
-                      <p className="text-foreground font-medium font-[family-name:var(--font-geist-mono)] text-sm sm:text-base max-w-sm leading-relaxed opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      <p className="font-mono">
                         {project.description}
                       </p>
                     </div>

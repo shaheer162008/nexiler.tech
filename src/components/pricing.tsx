@@ -56,14 +56,14 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section className="relative w-full bg-transparent py-12 sm:py-16 md:py-24 font-[family-name:var(--font-geist-sans)] z-10 border-t border-border/5">   
+    <section id="packages" className="relative w-full bg-transparent py-12 sm:py-16 md:py-24 font-sans z-10">
       {/* Background gradients for premium feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 blur-[100px] bg-[conic-gradient(from_90deg,theme(colors.zinc.800),theme(colors.zinc.900),theme(colors.zinc.700),theme(colors.zinc.800))]" />
       </div>
 
 <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+          <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-sans">
             <div className="max-w-2xl text-left flex flex-col items-start">
               <motion.div
                 initial={{ opacity: 1, scale: 0.9 }}
@@ -73,14 +73,14 @@ export default function Pricing() {
                 className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
               >
                 <Gem className="w-4 h-4 text-foreground" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+                <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                   Pricing Plans
                 </span>
               </motion.div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
                 Transparent Pricing
               </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+              <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono">
                 Choose the perfect plan tailored to accelerate your business growth. No hidden fees, just value.
               </p>
             </div>
@@ -113,7 +113,7 @@ export default function Pricing() {
                   <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
 
                 </div>
-                <p className="text-sm text-muted-foreground/90 font-[family-name:var(--font-geist-mono)] min-h-[3rem]">
+                <p className="text-sm text-muted-foreground/90 font-mono min-h-[3rem]">
                   {plan.description}
                 </p>
               </div>

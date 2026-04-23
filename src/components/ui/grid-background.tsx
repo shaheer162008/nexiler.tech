@@ -18,12 +18,10 @@ export const GridBackground = ({ children, className }: GridBackgroundProps) => 
             linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
           `,
           backgroundSize: "40px 40px, 40px 40px",
+          maskImage: "linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent)"
         }}
       />
-      {/* Top fade gradient (fixes mobile Safari mask-image render limits) */}
-      <div className="absolute top-0 inset-x-0 h-[150px] bg-gradient-to-b from-background to-transparent z-0 pointer-events-none" />
-      {/* Bottom fade gradient */}
-      <div className="absolute bottom-0 inset-x-0 h-[150px] bg-gradient-to-t from-background to-transparent z-0 pointer-events-none" />
 
       {/* Content wrapper */}
       <div className="relative z-10 w-full">

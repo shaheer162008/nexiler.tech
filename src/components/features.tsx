@@ -47,7 +47,7 @@ const itemVariants: any = {
 
 // --- Helper Components for the Demo ---
 const IntegrationCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer flex h-full flex-col font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer flex h-full flex-col font-sans">
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardHeader className="relative z-10">
       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/50">
@@ -56,14 +56,14 @@ const IntegrationCard = () => (
         </span>
       </div>
       <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Zapier Integration</CardTitle>
-      <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed mt-2">
+      <CardDescription className="font-mono text-sm text-muted-foreground">
         Unlock effortless automation. Your gateway to effortless automation
         connect your favourite apps, streamline workflows, and supercharge
         productivity with ease.
       </CardDescription>
     </CardHeader>
     <CardFooter className="mt-auto flex items-center justify-between">
-      <Button variant="outline" size="sm" className="font-[family-name:var(--font-geist-sans)] font-bold tracking-tight text-xs sm:text-sm">
+      <Button variant="outline" size="sm" className="font-sans font-bold tracking-tight text-xs sm:text-sm">
         <Settings2 className="mr-2 h-4 w-4" />
         Configure
       </Button>
@@ -76,7 +76,7 @@ const IntegrationCard = () => (
 );
 
 const TrackersCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-sans">
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardContent className="relative z-10 flex h-full flex-col justify-between p-6">
@@ -84,7 +84,7 @@ const TrackersCard = () => (
         <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">
           Trackers Connected
         </CardTitle>
-        <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed mt-2">03 Active Integrations</CardDescription>
+        <CardDescription className="font-mono text-sm text-muted-foreground">03 Active Integrations</CardDescription>
       </div>
       <div className="flex -space-x-2 overflow-hidden mt-4">
         <img
@@ -108,23 +108,23 @@ const TrackersCard = () => (
 );
 
 const FocusCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-sans">
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardContent className="relative z-10 flex h-full flex-col justify-between p-6">
       <div className="flex items-start justify-between mb-4">
         <div>
           <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Focusing</CardTitle>
-          <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium mt-2">Productivity Analytics</CardDescription>
+          <CardDescription className="font-mono text-sm text-muted-foreground">Productivity Analytics</CardDescription>
         </div>
-        <Badge variant="outline" className="border-orange-300 text-foreground font-[family-name:var(--font-geist-mono)] whitespace-nowrap shrink-0">
+        <Badge variant="outline" className="border-orange-300 text-foreground font-sans whitespace-nowrap shrink-0">
           Range Ratio
         </Badge>
       </div>
       <div>
         <span className="text-5xl sm:text-6xl font-extrabold tracking-tighter">42%</span>
       </div>
-      <div className="flex justify-between text-xs sm:text-sm font-[family-name:var(--font-geist-mono)] font-medium text-muted-foreground/90 mt-4">
+      <div className="flex justify-between text-xs sm:text-smfont-mono font-medium text-muted-foreground/90 mt-4">
         <span>Maximum of focus</span>
         <span>Monthly Focus</span>
       </div>
@@ -133,7 +133,7 @@ const FocusCard = () => (
 );
 
 const StatisticCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer relative h-full w-full overflow-hidden font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer relative h-full w-full overflow-hidden font-sans">
     {/* Dotted background */}
     <div
       className="absolute inset-0 opacity-20"
@@ -150,14 +150,14 @@ const StatisticCard = () => (
 );
 
 const ProductivityCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-sans">
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardContent className="relative z-10 flex h-full flex-col justify-end p-6">
       <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter mb-2">
         Team's Productivity
       </CardTitle>
-      <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium leading-relaxed">
+      <CardDescription className="font-mono text-sm text-muted-foreground">
         Boost your team's efficiency with our next-gen productivity solutions.
       </CardDescription>
     </CardContent>
@@ -165,24 +165,24 @@ const ProductivityCard = () => (
 );
 
 const ShortcutsCard = () => (
-  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-[family-name:var(--font-geist-sans)]">
+  <Card className="relative rounded-[2rem] group overflow-hidden bg-card/60 backdrop-blur-sm border-white/5 hover:border-white/20 transition-all duration-500 ease-out hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] cursor-pointer h-full font-sans">
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0 pointer-events-none" />
     <CardContent className="relative z-10 flex h-full flex-wrap items-center justify-between gap-4 p-6">
       <div className="space-y-2">
         <CardTitle className="text-xl sm:text-2xl font-extrabold tracking-tighter">Shortcut Keys</CardTitle>
-        <CardDescription className="font-[family-name:var(--font-geist-mono)] text-muted-foreground/90 font-medium">
+        <CardDescription className="font-mono text-sm text-muted-foreground">
           Faster easier way to access the features.
         </CardDescription>
       </div>
       <div className="flex items-center gap-2">
         {/* Styled div replacing Kbd */}
-        <div className="flex h-7 w-7 items-center justify-center rounded-md border bg-background font-[family-name:var(--font-geist-mono)] text-xs font-medium text-muted-foreground">
+        <div className="flex h-7 w-7 items-center justify-center rounded-md border bg-background font-sans text-xs font-medium text-muted-foreground">
           <Command className="h-3 w-3" />
         </div>
         <Plus className="h-3 w-3 text-muted-foreground" />
         {/* Styled div replacing Kbd */}
-        <div className="flex h-7 w-7 items-center justify-center rounded-md border bg-background font-[family-name:var(--font-geist-mono)] text-xs font-medium text-muted-foreground">
+        <div className="flex h-7 w-7 items-center justify-center rounded-md border bg-background font-sans text-xs font-medium text-muted-foreground">
           M
         </div>
       </div>
@@ -248,9 +248,9 @@ export const BentoGridShowcase = ({
 // --- The Default Exported Section Wrapper ---
 export default function Features() {
   return (
-    <div className="relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8 w-full">
+    <div id="features" className="relative z-10 pb-8 sm:pb-12 pt-4 sm:pt-8 w-full">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-[family-name:var(--font-geist-sans)]">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 font-sans">
           <div className="max-w-2xl text-left flex flex-col items-start">
             <motion.div
               initial={{ opacity: 1, scale: 0.9 }}
@@ -260,14 +260,14 @@ export default function Features() {
               className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-secondary/30 border border-white/10 backdrop-blur-md lg:mb-6"
             >
               <Command className="w-4 h-4 text-primary" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-[family-name:var(--font-geist-mono)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground font-sans">
                 Core Capabilities
               </span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
               Product Features
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-[family-name:var(--font-geist-mono)]">
+            <p className="text-lg sm:text-xl text-muted-foreground/90 font-medium text-balance font-mono">
               Organize, prioritize and control track your tasks more efficiently
               in our trusted platform
             </p>
